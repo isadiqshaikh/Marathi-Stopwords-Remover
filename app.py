@@ -1,7 +1,11 @@
 import streamlit as st
 from nltk.tokenize import word_tokenize
 import nltk
-nltk.download('punkt')
+import os
+nltk_data_dir = os.path.join(os.getcwd(), 'nltk_data')
+nltk.download('punkt', download_dir=nltk_data_dir)
+nltk.data.path.append(nltk_data_dir)
+
 
 # Sample large Marathi stopword list (you can expand it from external source)
 marathi_stopwords = [
